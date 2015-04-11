@@ -11,6 +11,5 @@ RUN         apt-get update -qq && apt-get install -y patch gcc wget unzip && \
             apt-get clean && \
             rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 ADD         image-common /tmp/dexec/image-common
-ADD         dexec-nim.sh /tmp/dexec/dexec-nim.sh
 VOLUME      /tmp/dexec/build
-ENTRYPOINT  ["/tmp/dexec/dexec-nim.sh", "nim c --verbosity:0"]
+ENTRYPOINT  ["/tmp/dexec/image-common/dexec-nim.sh", "nim c --verbosity:0"]
