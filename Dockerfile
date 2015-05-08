@@ -1,5 +1,6 @@
 FROM        debian:8.0
 MAINTAINER  andystanton
+ENV         LANG C.UTF-8
 ENV         NIM_VERSION 0.10.2
 RUN         apt-get update -qq && apt-get install -y patch gcc wget unzip && \
             wget http://nim-lang.org/download/nim-${NIM_VERSION}.zip && \
